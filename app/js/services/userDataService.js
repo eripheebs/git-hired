@@ -2,7 +2,7 @@ gitHired.service('UserDataService', ['$http', 'UserDataFactory', function($http,
   var self = this;
 
   self.getUser = function(username) {
-    return $http.get("https://api.github.com/users/" + username)
+    return $http.get("https://api.github.com/users/" + username + "?access_token=72ca3f0ebee0939835f6d1f6bb3d3d18d1ddf260")
       .then(_handleResponseFromAPI, _errorCallback);
   };
 
@@ -12,6 +12,7 @@ gitHired.service('UserDataService', ['$http', 'UserDataFactory', function($http,
   };
 
   function _errorCallback(error) {
-    return error
+    console.log(error);
+    return error;
   }
 }]);
