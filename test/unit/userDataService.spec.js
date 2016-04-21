@@ -1,9 +1,9 @@
 describe('UserDataService', function() {
   beforeEach(module('gitHired'));
 
-  var UserDataService, httpBackend;
+  var UserDataService, UserDataFactory, httpBackend;
 
-  var userData = "Name";
+  var userData = {"login": "Name", "public_repos": 25, "followers": 5, "avatar_url": 'url'};
 
   beforeEach(inject(function(_UserDataService_, _UserDataFactory_, $httpBackend) {
     UserDataService = _UserDataService_;
@@ -11,12 +11,12 @@ describe('UserDataService', function() {
     httpBackend = $httpBackend;
   }));
 
-  var fakePerson = new UserDataFactory("Name", 25, 5, 'https://avatars.githubusercontent.com/u/583231?v=3');
-
   it('fetches users from github', function(){
-    httpBackend.expectGET("").respond(userData);
+    httpBackend.expectGET("https://api.github.com/users/Name").respond(userData);
 
-    GitHubDataService.getUser().then(function(todos) {
+    var fakePerson = new UserDataFactory("Name", 25, 5, 'url');
+
+    UserDataService.getUser("Name").then(function(user) {
       expect(user).toEqual(fakePerson);
     });
 
