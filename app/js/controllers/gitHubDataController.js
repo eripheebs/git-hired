@@ -1,6 +1,8 @@
 gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataService', function (GitHubDataService, UserDataService) {
   var self = this;
 
+  self.users = []
+
   self.searchUser = function(searchUserText) {
     var username = searchUserText;
     self.getUsernames(username);
@@ -17,6 +19,7 @@ gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataServic
 
   self.getUser = function(username){
     UserDataService.getUser(username).then(function(user){
+      console.log(user);
       return user;
     });
   };
