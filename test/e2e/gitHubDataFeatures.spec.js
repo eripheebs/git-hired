@@ -13,4 +13,10 @@ describe('gitHubDataController',function () {
     mypic = user.element(by.css("img[src*='https://avatars.githubusercontent.com/u/583231?v=3']"));
     expect((mypic).isPresent()).toBe(true);
   });
+
+  it('displays the number of followers',function () {
+    var users = $$('#users p');
+    expect(users.first().getText()).toMatch('5');
+    expect(users.last().getText()).toMatch('1');
+  });
 });
