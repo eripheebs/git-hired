@@ -15,7 +15,7 @@ describe('gitHubDataController', function() {
 
   it('can search for a user', function(){
     httpBackend.expectGET("https://api.github.com/search/users?q=Fakey").respond(gitHubData);
-    httpBackend.expectGET("https://api.github.com/users/Fakey").respond(userData);
+    httpBackend.expectGET("https://api.github.com/users/Fakey?access_token=72ca3f0ebee0939835f6d1f6bb3d3d18d1ddf260").respond(userData);
 
     var fakePerson = new UserDataFactory("Fakey", 25, 5, 'url');
 

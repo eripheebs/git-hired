@@ -15,7 +15,7 @@
     <div id="users" ng-controller="gitHubDataController as controller">
       <input id="searchUser" ng-model="searchUserText" placeholder="who are you looking for?"></input>
       <button id="submitSearch" ng-click="controller.searchUser(searchUserText)">Search</button>
-      <p ng-repeat="user in controller.users">
+      <p ng-repeat="user in controller.users track by $index">
         <span class="login">{{user.login}}</span>
         <span class="followers">{{user.followers}}</span>
         <span class="repos">{{user.repos}}</span>
