@@ -2,16 +2,16 @@ gitHired.service('GitHubDataService', ['$http', function($http) {
   var self = this;
 
   self.getAll = function(username) {
-    var self = this;
-    self.userNotFound = false;
     return $http.get("https://api.github.com/search/users?q=" + username)
-      .success(_handleResponseFromAPI)
-      .error(_errorCallback)
+      .then(_handleResponseFromAPI, _errorCallback);
   };
 
   function _handleResponseFromAPI (response) {
-    var data = response.data
-
+    var userArray = response.data.items;
+    var usernames = userArray.map(function (user) {
+      return user.login;
+    });
+    return usernames;
   }
 
   function _errorCallback(error) {
