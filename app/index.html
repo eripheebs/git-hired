@@ -7,11 +7,17 @@
     <script src="js/controllers/gitHiredController.js"></script>
     <script src="js/controllers/gitHubDataController.js"></script>
     <script src="js/services/gitHubDataService.js"></script>
+    <script src="js/factories/userDataFactory.js"></script>
+    <script src="js/services/userDataService.js"></script>
     <title>Git Hired</title>
   </head>
   <body>
-    <div ng-controller="gitHubDataController as controller">
-      {{ controller.users }}
+    <div id="users" ng-controller="gitHubDataController as controller">
+      <p ng-repeat="user in controller.users">
+        <span class="login">{{user.login}}</span>
+        <span class="followers">{{user.followers}}</span>
+        <img class="avatar" src="{{user.avatar}}" alt="{{user.login}}">
+      </p>
     </div>
   </body>
 </html>

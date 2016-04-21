@@ -3,7 +3,7 @@ describe('GitHubDataService', function() {
 
   var GitHubDataService, httpBackend;
 
-  var gitHubData = [{username: "Name1"}, {username: "Name2"}];
+  var gitHubData = [{"login": "Name1"}, {"login": "Name2"}];
 
   beforeEach(inject(function(_GitHubDataService_, $httpBackend) {
     GitHubDataService = _GitHubDataService_;
@@ -11,14 +11,11 @@ describe('GitHubDataService', function() {
     httpBackend = $httpBackend;
   }));
 
-  var fakePerson1 = new GitHubDataFactory("Name1");
-  var fakePerson2 = new GitHubDataFactory("Name2");
-
   it('fetches users from github', function(){
     httpBackend.expectGET("").respond(gitHubData);
 
-    GitHubDataService.getAll().then(function(todos) {
-      expect(users).toEqual([fakePerson1, fakePerson2]);
+    GitHubDataService.getAll("Name").then(function(todos) {
+      expect(usernames).toEqual(["Name1", "Name2"]);
     });
 
     httpBackend.flush();
