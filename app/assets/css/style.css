@@ -1,0 +1,62 @@
+#users {
+  max-width: 650px;
+  margin: 0 auto;
+}
+a{
+  text-decoration: none;
+}
+.user {
+  box-shadow: rgba(0, 0, 0, 0.0784314) 0px 1px 2px 0px;
+  color: rgb(61, 62, 68);
+  height: 100px;
+  min-height: auto;
+  min-width: auto;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+  border: 1px solid rgb(233, 233, 236);
+  border-radius: 2px 2px 2px 2px;
+  outline: rgb(61, 62, 68) none 0px;
+  transition: box-shadow 0.3s ease-in-out 0s;
+  max-width: 600px;
+  margin: 27.7969px auto;
+  transition: margin 4s;
+}
+
+.user:hover{
+  max-width: 650px;
+}
+.profile-link {
+    box-sizing: border-box;
+    color: rgb(237, 62, 68);
+    text-decoration: none;
+    border-top: 0px none rgb(241, 101, 105);
+    border-right: 0px none rgb(241, 101, 105);
+    border-bottom: 2px solid rgb(241, 101, 105);
+    border-left: 0px none rgb(241, 101, 105);
+    font: normal normal normal normal 16px / 28px Calibre, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    outline: rgb(237, 62, 68) none 0px;
+    transition: color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s;
+}
+
+.avatar{
+  height: 80px;
+  width: 80px;
+  position: relative;
+  border-radius: 2px 2px 0 0;
+  float: left;
+  border-radius: 100%;
+  margin: 10px;
+}
+
+.details{
+  margin: 20px;
+}
+
+.details span{
+  display: block;
+  font: normal normal 500 normal 14px / 17.5px Calibre, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#users .details .login{
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
