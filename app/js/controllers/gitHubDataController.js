@@ -1,0 +1,3 @@
+gitHired.controller('gitHubDataController',[function () {
+
+}]);
