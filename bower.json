@@ -1,0 +1,24 @@
+{
+  "name": "githired",
+  "description": "A simple git hired app in angular",
+  "main": "index.js",
+  "authors": [
+    "Tobenna <tobennandu@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/tobenna/git-hired",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.5"
+  }
+}

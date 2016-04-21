@@ -1,0 +1,31 @@
+{
+  "name": "git-hired",
+  "version": "1.0.0",
+  "description": "A simple hiring tool using github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobenna/git-hired.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobenna/git-hired/issues"
+  },
+  "homepage": "https://github.com/tobenna/git-hired#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "jasmine-core": "^2.4.1",
+    "jasmine-node": "^1.14.5",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
+    "protractor": "^3.2.2"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
