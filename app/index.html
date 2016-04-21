@@ -11,6 +11,7 @@
     <div id="users" ng-controller="gitHubDataController as controller">
       <p ng-repeat="user in controller.users">
         {{user.login}}
+        <img src="{{user.avatar}}" alt="{{user.login}}">
       </p>
     </div>
   </body>
