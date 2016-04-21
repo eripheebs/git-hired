@@ -5,9 +5,9 @@ describe('UserDataService', function() {
 
   var userData = "Name";
 
-  beforeEach(inject(function(_UserDataService_, $httpBackend) {
+  beforeEach(inject(function(_UserDataService_, _UserDataFactory_, $httpBackend) {
     UserDataService = _UserDataService_;
-    // GitHubDataFactory = _GitHubDataFactory_;
+    UserDataFactory = _UserDataFactory_;
     httpBackend = $httpBackend;
   }));
 

@@ -7,7 +7,6 @@ describe('GitHubDataService', function() {
 
   beforeEach(inject(function(_GitHubDataService_, $httpBackend) {
     GitHubDataService = _GitHubDataService_;
-    // GitHubDataFactory = _GitHubDataFactory_;
     httpBackend = $httpBackend;
   }));
 
