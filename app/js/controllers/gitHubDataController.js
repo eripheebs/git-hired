@@ -4,8 +4,7 @@ gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataServic
   self.users = []
 
   self.searchUser = function(searchUserText) {
-    var username = searchUserText;
-    self.getUsernames(username);
+    self.getUsernames(searchUserText);
   }
 
 
@@ -20,9 +19,8 @@ gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataServic
       .then(_getUserData)
 
     function _getUserData(usernames) {
-      var usernamesArray = usernames;
       self.users = []
-      usernamesArray.map(function(username){
+      usernames.map(function(username){
         return self.getUser(username);
       });
     };
