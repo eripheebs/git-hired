@@ -16,7 +16,7 @@
     <div id="users" ng-controller="gitHubDataController as controller">
       <input id="searchUser" ng-model="searchUserText" placeholder="who are you looking for?"></input>
       <button id="submitSearch" ng-click="controller.searchUser(searchUserText)">Search</button>
-      <a href="#" ng-repeat="user in controller.users">
+      <a href="{{user.url}}" ng-repeat="user in controller.users">
         <div class="user" >
           <img class="avatar" src="{{user.avatar}}" alt="{{user.login}}">
           <div class="details">
