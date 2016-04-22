@@ -21,15 +21,10 @@ describe('gitHubDataController', function() {
 
     ctrl.searchUser("Fakey");
 
-    function expectFunction(){
-      var test = setTimeout(myTest, 3000);
-    }
-
-    function myTest(){
-      expect(ctrl.users).toEqual([fakePerson]);
-    }
-
     httpBackend.flush();
+
+    expect(ctrl.users).toEqual([fakePerson]);
+
   });
 
 });
