@@ -2,8 +2,8 @@ gitHired.service('UserDataService', ['$http', 'UserDataFactory', function($http,
   var self = this;
 
   self.getUser = function(username) {
-    return $http.get("https://api.github.com/users/" + username + "?access_token=72ca3f0ebee0939835f6d1f6bb3d3d18d1ddf260")
-      .then(_handleResponseFromAPI, _errorCallback);
+    return $http.get("https://api.github.com/users/" + username + "?access_token=92a1dbb7644d40d15398a160b6002835ca85ef31")
+      .then(_handleResponseFromAPI, _errorCallback)
   };
 
   function _handleResponseFromAPI (response) {

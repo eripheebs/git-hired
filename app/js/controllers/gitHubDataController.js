@@ -16,12 +16,15 @@ gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataServic
   };
 
   self.getUsernames = function(username){
-    GitHubDataService.getAll(username).then(function(usernames){
+    GitHubDataService.getAll(username)
+      .then(_getUserData)
+
+    function _getUserData(usernames) {
       var usernamesArray = usernames;
-      self.users = [];
+      self.users = []
       usernamesArray.map(function(username){
         return self.getUser(username);
       });
-    });
+    };
   };
 }]);
