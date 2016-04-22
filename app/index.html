@@ -4,12 +4,18 @@
     <meta charset="utf-8">
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/controllers/gitHiredController.js"></script>
     <script src="js/controllers/gitHubDataController.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="js/services/gitHubDataService.js"></script>
+    <script src="js/factories/userDataFactory.js"></script>
+    <script src="js/services/userDataService.js"></script>
     <title>Git Hired</title>
   </head>
   <body>
     <div id="users" ng-controller="gitHubDataController as controller">
+      <input id="searchUser" ng-model="searchUserText" placeholder="who are you looking for?"></input>
+      <button id="submitSearch" ng-click="controller.searchUser(searchUserText)">Search</button>
       <a href="#" ng-repeat="user in controller.users">
         <div class="user" >
           <img class="avatar" src="{{user.avatar}}" alt="{{user.login}}">

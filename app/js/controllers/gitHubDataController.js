@@ -1,6 +1,27 @@
-gitHired.controller('gitHubDataController',[function () {
-  this.users = [
-          { "login": "tobenna", "repos":25, "followers":5, "avatar": 'https://avatars.githubusercontent.com/u/583231?v=3'},
-          { "login": "hanfak", "repos":11, "followers":1, "avatar":2}
-        ];
+gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataService', function (GitHubDataService, UserDataService) {
+  var self = this;
+
+  self.users = [];
+
+  self.searchUser = function(searchUserText) {
+    var username = searchUserText;
+    self.getUsernames(username);
+  };
+
+
+  self.getUser = function(username){
+    UserDataService.getUser(username).then(function(user){
+      self.users.push(user);
+    });
+  };
+
+  self.getUsernames = function(username){
+    GitHubDataService.getAll(username).then(function(usernames){
+      var usernamesArray = usernames;
+      self.users = [];
+      usernamesArray.map(function(username){
+        return self.getUser(username);
+      });
+    });
+  };
 }]);
