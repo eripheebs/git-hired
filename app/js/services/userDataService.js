@@ -13,5 +13,5 @@ gitHired.service('UserDataService', ['$http', 'UserDataFactory', function($http,
 
   function _errorCallback(error) {
     return error;
-  };
+  }
 }]);
