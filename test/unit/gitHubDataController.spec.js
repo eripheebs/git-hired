@@ -15,21 +15,16 @@ describe('gitHubDataController', function() {
 
   it('can search for a user', function(){
     httpBackend.expectGET("https://api.github.com/search/users?q=Fakey").respond(gitHubData);
-    httpBackend.expectGET("https://api.github.com/users/Fakey?access_token=72ca3f0ebee0939835f6d1f6bb3d3d18d1ddf260").respond(userData);
+    httpBackend.expectGET("https://api.github.com/users/Fakey?access_token=92a1dbb7644d40d15398a160b6002835ca85ef31").respond(userData);
 
     var fakePerson = new UserDataFactory("Fakey", 25, 5, 'url');
 
     ctrl.searchUser("Fakey");
 
-    function expectFunction(){
-      var test = setTimeout(myTest, 3000);
-    }
-
-    function myTest(){
-      expect(ctrl.users).toEqual([fakePerson]);
-    }
-
     httpBackend.flush();
+
+    expect(ctrl.users).toEqual([fakePerson]);
+
   });
 
 });

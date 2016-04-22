@@ -12,7 +12,7 @@ describe('UserDataService', function() {
   }));
 
   it('fetches users from github', function(){
-    httpBackend.expectGET("https://api.github.com/users/Name?access_token=72ca3f0ebee0939835f6d1f6bb3d3d18d1ddf260").respond(userData);
+    httpBackend.expectGET("https://api.github.com/users/Name?access_token=92a1dbb7644d40d15398a160b6002835ca85ef31").respond(userData);
 
     var fakePerson = new UserDataFactory("Name", 25, 5, 'url');
 

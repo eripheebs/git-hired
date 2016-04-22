@@ -12,9 +12,9 @@ gitHired.service('GitHubDataService', ['$http', function($http) {
       return user.login;
     });
     return usernames;
-  }
+  };
 
   function _errorCallback(error) {
-    return error
-  }
+    return error;
+  };
 }]);

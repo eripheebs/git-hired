@@ -1,27 +1,31 @@
 gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataService', function (GitHubDataService, UserDataService) {
   var self = this;
 
-  self.users = []
+  self.users = [];
 
   self.searchUser = function(searchUserText) {
-    var username = searchUserText;
-    self.getUsernames(username);
-  }
+    GitHubDataService.getAll(searchUserText)
+      .then(_getUserData);
+  };
 
+  function _getUserData(usernames) {
+    _refreshUserArray;
+    _createUserArray(usernames);
+  };
 
-  self.getUser = function(username){
+  getUser = function(username){
     UserDataService.getUser(username).then(function(user){
       self.users.push(user);
     });
   };
 
-  self.getUsernames = function(username){
-    GitHubDataService.getAll(username).then(function(usernames){
-      var usernamesArray = usernames;
-      self.users = [];
-      usernamesArray.map(function(username){
-        return self.getUser(username);
-      });
+  function _refreshUserArray(){
+    self.users = [];
+  };
+
+  function _createUserArray(usernames){
+    usernames.map(function(username){
+      return getUser(username);
     });
   };
 }]);
