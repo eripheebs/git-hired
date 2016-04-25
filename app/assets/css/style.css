@@ -2,9 +2,105 @@
   max-width: 650px;
   margin: 0 auto;
 }
+
 a{
   text-decoration: none;
 }
+
+hr{
+  max-width: 600px;
+  border: none;
+  border-top: medium double #333;
+}
+
+#users .details .login{
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+h1{
+  text-align: center;
+  font-family: Pacifico;
+}
+
+#subTitle{
+  text-align: center;
+  font-family: monospace;
+}
+
+#users{
+  max-width:600px;
+  height: 60vh;
+  overflow: auto;
+  position: relative;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #b3b3cc;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f0f0f5;
+}
+
+::-webkit-scrollbar-button {
+  background-color: #7c2929;
+}
+
+#searchBox{
+  position: fixed;
+  top: inherit;
+  left: inherit;
+  margin-top: 10px;
+  margin-left: 30%;
+}
+
+#searchUser{
+  padding: 15px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  border-radius: 10%;
+}
+
+#searchUser:focus,
+#searchUser.focus {
+  border: solid 5px #969696;
+}
+
+#submitSearch{
+  padding: 17px;
+  color: #fff;
+  background-color: #969696;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+  border-radius: 10%;
+}
+
+#submitSearch:hover,
+#submitSearch.hover {
+  background-color: #c9c9c9;
+  text-shadow: -1px 1px #27496d;
+}
+
+#submitSearch:active,
+#submitSearch.active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}
+
+#welcome{
+  text-align: center;
+  position: relative;
+  margin: 80px;
+  font-family: monospace;
+}
+
 .user {
   box-shadow: rgba(0, 0, 0, 0.0784314) 0px 1px 2px 0px;
   color: rgb(61, 62, 68);
@@ -54,9 +150,4 @@ a{
 .details span{
   display: block;
   font: normal normal 500 normal 14px / 17.5px Calibre, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-#users .details .login{
-  font-size: 1.3em;
-  margin-bottom: 5px;
 }
