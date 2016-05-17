@@ -8,7 +8,7 @@ gitHired.service('UserDataService', ['$http', 'UserDataFactory', function($http,
 
   function _handleResponseFromAPI (response) {
     userData = response.data;
-    return new UserDataFactory(userData.login, userData.public_repos, userData.followers, userData.avatar_url);
+    return new UserDataFactory(userData.login, userData.public_repos, userData.followers, userData.avatar_url, userData.html_url);
   }
 
   function _errorCallback(error) {
