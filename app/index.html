@@ -6,6 +6,7 @@
     <script src="js/app.js"></script>
     <script src="js/controllers/gitHiredController.js"></script>
     <script src="js/controllers/gitHubDataController.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/services/gitHubDataService.js"></script>
     <script src="js/factories/userDataFactory.js"></script>
@@ -13,19 +14,29 @@
     <title>Git Hired</title>
   </head>
   <body>
+    <h1>GitHired</h1>
+    <p id="subTitle">a GitHub User Search App</p>
+    <hr>
     <div id="users" ng-controller="gitHubDataController as controller">
-      <input id="searchUser" ng-model="searchUserText" placeholder="who are you looking for?"></input>
-      <button id="submitSearch" ng-click="controller.searchUser(searchUserText)">Search</button>
-      <a href="{{user.url}}" ng-repeat="user in controller.users">
-        <div class="user" >
-          <img class="avatar" src="{{user.avatar}}" alt="{{user.login}}">
-          <div class="details">
-            <span class="login">{{user.login}}</span>
-            <span class="followers">Followers: {{user.followers}}</span>
-            <span class="repos">Number of Repos: {{user.repos}}</span>
-          </div>
+      <div id="searchBox">
+        <input id="searchUser" ng-model="searchUserText" placeholder="enter a name here"></input>
+        <button id="submitSearch" ng-click="controller.searchUser(searchUserText)">Search</button>
+      </div>
+      <div id="searchResults">
+        <div id="welcome" ng-hide="controller.hasUsers()" class="ng-hide">"Welcome! You can find GitHub users here."</div>
+          <a href="{{user.url}}" ng-repeat="user in controller.users">
+            <div class="user">
+              <img class="avatar" src="{{user.avatar}}" alt="{{user.login}}">
+              <div class="details">
+                <span class="login">{{user.login}}</span>
+                <span class="followers">Followers: {{user.followers}}</span>
+                <span class="repos">Number of Repos: {{user.repos}}</span>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+      </div>
+    <hr>
+    <p id="subTitle" style="font-size:8px">By Team TECH (Tobenna, Erika, Chris and Han)</p>
   </body>
 </html>
