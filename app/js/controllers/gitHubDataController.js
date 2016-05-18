@@ -28,4 +28,8 @@ gitHired.controller('gitHubDataController',['GitHubDataService', 'UserDataServic
       return getUser(username);
     });
   }
+  
+  self.hasUsers = function(){
+    return (self.users.length > 0);
+  };
 }]);
